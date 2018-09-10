@@ -1,9 +1,11 @@
-package vn.com.ino.pikawar.warmup;
+package vn.com.ino.algorithm;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.Test;
+
+import vn.com.ino.algorithm.SudokuSolver;
 
 public class SudokuSolverTest {
 

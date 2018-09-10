@@ -1,4 +1,4 @@
-package vn.com.ino.pikawar.warmup;
+package vn.com.ino.algorithm;
 
 public class SudokuSolver {
 
