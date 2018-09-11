@@ -1,4 +1,4 @@
-package vn.com.ino.algorithm;
+package vn.com.ino.algorithm.search;
 
 public interface SearchAlgorithm {
 

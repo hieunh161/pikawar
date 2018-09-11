@@ -1,4 +1,4 @@
-package vn.com.ino.algorithm;
+package vn.com.ino.algorithm.search;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -9,6 +9,8 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 import org.junit.Test;
+
+import vn.com.ino.algorithm.search.BinarySearch;
 
 public class BinarySearchTest {
 
