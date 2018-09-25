@@ -1,6 +1,7 @@
 package vn.com.ino.algorithm.sudoku;
 
 public class Sudoku {
+	// TODO: add algorithm to solve multiple solutions
 
 	private int[][] board;
 
