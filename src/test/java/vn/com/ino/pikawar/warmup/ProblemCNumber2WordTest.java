@@ -20,7 +20,12 @@ public class ProblemCNumber2WordTest {
 
 	@Test
 	public void shouldBePassTestCase3() {
-		assertThat(number2Word.convert("5"), equalTo("5"));
+		assertThat(number2Word.convert("5"), equalTo("nam"));
+		assertThat(number2Word.convert("15"), equalTo("muoi lam"));
+		assertThat(number2Word.convert("25"), equalTo("hai muoi lam"));
+		assertThat(number2Word.convert("115"), equalTo("mot tram muoi lam"));
+		assertThat(number2Word.convert("225"), equalTo("hai tram hai muoi lam"));
+		assertThat(number2Word.convert("205"), equalTo("hai tram le nam"));
 	}
 
 	@Test

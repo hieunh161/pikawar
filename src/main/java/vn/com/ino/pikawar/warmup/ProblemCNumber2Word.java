@@ -48,7 +48,88 @@ package vn.com.ino.pikawar.warmup;
  *         "205"==> "hai tram le nam"
  */
 public class ProblemCNumber2Word {
+	String[] numbers = { "khong", "mot", "hai", "ba", "bon", "nam", "sau", "bay", "tam", "chin" };
+
 	String convert(String number) {
-		return "";
+		// 999 999 999 999 999
+		return sixDigit(number);
+	}
+
+	String sixDigit(String number) {
+		String result = " ";
+		int n = Integer.parseInt(number);
+		int firstThreeDigit = n / 1000;
+
+		int tram = firstThreeDigit / 100;
+		int chuc = (firstThreeDigit % 100) / 10;
+		int donvi = (firstThreeDigit % 10);
+		if (tram > 0) {
+			result += numbers[tram] + " tram ";
+		}
+		if (chuc > 0) {
+			if (chuc == 1) {
+				result += " muoi ";
+			} else
+				result += numbers[chuc] + " chuc ";
+		}
+		if (donvi > 0) {
+			result += numbers[donvi];
+		}
+		if (firstThreeDigit > 0)
+			result += " ngan ";
+		int lastThreeDigit = n % 1000;
+		result += threeDigit(lastThreeDigit + "", firstThreeDigit > 0);
+		return result.replaceAll("\\s{2,}", " ").trim();
+	}
+
+	String threeDigit(String number, boolean f) {
+		String result = " ";
+		int n = Integer.parseInt(number);
+		int tram = n / 100;
+		int chuc = (n % 100) / 10;
+		int donvi = (n % 10);
+		if (tram > 0) {
+			result += numbers[tram] + " tram ";
+			if (chuc > 0) {
+				if (chuc == 1) {
+					result += " muoi ";
+				} else {
+					result += numbers[chuc] + " muoi ";
+				}
+				if (donvi > 0) {
+					if (chuc >= 1 && donvi == 5) {
+						result += " lam ";
+					} else {
+						result += numbers[donvi];
+					}
+				}
+			} else {
+				if (donvi > 0) {
+					result += " le ";
+					result += numbers[donvi];
+				}
+			}
+		} else {
+			if (f) {
+				result += " khong tram ";
+			}
+			if (chuc > 0) {
+				if (chuc == 1) {
+					result += " muoi ";
+				} else {
+					result += numbers[chuc] + " muoi ";
+				}
+				if (donvi > 0) {
+					if (chuc >= 1 && donvi == 5) {
+						result += " lam ";
+					} else {
+						result += numbers[donvi];
+					}
+				}
+			} else {
+				result += numbers[donvi];
+			}
+		}
+		return result.replaceAll("\\s{2,}", " ").trim();
 	}
 }
